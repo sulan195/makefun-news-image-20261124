@@ -57,13 +57,14 @@ def test_region_counts_sum_and_match():
     data = _load_data()
     counts = D.compute_region_counts(data["stories"])
     assert sum(c for _, c in counts) == 30
-    expected = [("EUROPE", 8), ("ASIA-PACIFIC", 7), ("MIDDLE EAST", 5),
-                ("NORTH AMERICA", 4), ("LATIN AMERICA", 3), ("AFRICA", 2),
+    expected = [("EUROPE", 7), ("EAST ASIA", 2), ("SOUTHEAST ASIA", 1),
+                ("SOUTH ASIA", 2), ("MIDDLE EAST", 5), ("NORTH AMERICA", 3),
+                ("LATIN AMERICA", 3), ("AFRICA", 5), ("OCEANIA", 1),
                 ("WORLD", 1)]
     assert counts == expected
     top_bar = "30 STORIES · %d REGIONS · EVERY ONE DATED 24 NOVEMBER 2026" % (
         sum(1 for _, c in counts if c > 0))
-    assert top_bar == ("30 STORIES · 7 REGIONS · EVERY ONE DATED "
+    assert top_bar == ("30 STORIES · 10 REGIONS · EVERY ONE DATED "
                        "24 NOVEMBER 2026")
     for s in data["stories"]:
         assert s["region"] in dict(counts)

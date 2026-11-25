@@ -71,16 +71,22 @@ CERTAINTY = {
 # Canonical region order and colours (7 truthful regions).
 REGIONS = [
     "EUROPE",
-    "ASIA-PACIFIC",
+    "EAST ASIA",
+    "SOUTHEAST ASIA",
+    "SOUTH ASIA",
     "MIDDLE EAST",
     "NORTH AMERICA",
     "LATIN AMERICA",
     "AFRICA",
+    "OCEANIA",
     "WORLD",
 ]
 REGION_COLORS = {
     "EUROPE": "#2B5B84",
-    "ASIA-PACIFIC": "#1F7A6E",
+    "EAST ASIA": "#1F7A6E",
+    "SOUTHEAST ASIA": "#4E9A51",
+    "SOUTH ASIA": "#C05621",
+    "OCEANIA": "#2B7A9E",
     "MIDDLE EAST": "#A64B2A",
     "NORTH AMERICA": "#6B4C8C",
     "LATIN AMERICA": "#8C3B6B",
@@ -254,7 +260,7 @@ def audit_unicode_glyphs(data, fonts):
     """
     static_texts = [
         data["series_title"], data["edition_date_display"], data["dek"],
-        "30 STORIES · 7 REGIONS · EVERY ONE DATED 24 NOVEMBER 2026",
+        "30 STORIES · 10 REGIONS · EVERY ONE DATED 24 NOVEMBER 2026",
         "REGIONS:", "UTC TIMELINE",
         "WHERE IT HAPPENED — 30 STORIES PINNED", "MAP KEY",
         "ALSO ON 24 NOVEMBER — 15 MORE STORIES",
